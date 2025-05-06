@@ -11,16 +11,21 @@ public class App {
         // To start, look at Centroid.java
         // BEFORE running the code, make a prediction of what the following will print:
 
-        Centroid locA = new Centroid(4, 9, "Salamander");
-        Centroid locB = new Centroid(4, 9, "Salamander");
-        Centroid locC = locA;
+        // Centroid locA = new Centroid(4, 9, "Salamander");
+        // Centroid locB = new Centroid(4, 9, "Salamander");
+        // Centroid locC = locA;
 
-        System.out.println("Result of locA == locB" + (locA == locB));
-        System.out.println("Result of locA.equals(locB) " + locA.equals(locB));
+        // System.out.println("Result of locA == locB" + (locA == locB));
+        // System.out.println("Result of locA.equals(locB) " + locA.equals(locB));
 
-        Set<Centroid> centroids = new HashSet<>();
-        centroids.add(locA);
-        System.out.println(centroids.contains(locB));
+        // Set<Centroid> centroids = new HashSet<>();
+        // centroids.add(locA);
+        // System.out.println(centroids.contains(locB));
+
+        Location a = new Location(5, 1, "food");
+        Location b = new Location(5, 1, "food");
+
+        System.out.println(a.equals(b));
 
         // videoDemo();
     }
