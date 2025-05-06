@@ -13,11 +13,22 @@ public class App {
 
         Centroid locA = new Centroid(4, 9, "Salamander");
         Centroid locB = new Centroid(4, 9, "Salamander");
+        Centroid locC = locA; // Assignment operator; thing on the left points to the thing on the right
 
-        System.out.println("Result of locA == locB " + (locA == locB));
-        System.out.println("Result of locA.equals(locB) " + locA.equals(locB));
+        System.out.println("Result of locA == locB " + (locA == locB)); // false
+        System.out.println("Result of locA.equals(locB) " + locA.equals(locB)); // false
+        System.out.println("Result of locA == locA " + (locA == locA)); // true
+        System.out.println("Result of locA == locC " + (locA == locC)); // true
 
-        videoDemo();
+        Set<Centroid> centroids = new HashSet<>();
+        centroids.add(locA);
+        System.out.println(centroids.contains(locB));
+
+        Location a = new Location(1, 5, "Salamander");
+        Location b = new Location(1, 5, "Salamander");
+        System.out.println("Locations a and b are the same: " + a.equals(b));
+
+        // videoDemo();
     }
 
     // We will look at this a bit later in the livecode, please ignore for first part
