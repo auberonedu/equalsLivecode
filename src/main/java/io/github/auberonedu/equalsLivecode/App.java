@@ -13,11 +13,14 @@ public class App {
 
         Centroid locA = new Centroid(4, 9, "Salamander");
         Centroid locB = new Centroid(4, 9, "Salamander");
+        Centroid locC = locA;
+
+        System.out.println();
 
         System.out.println("Result of locA == locB " + (locA == locB));
         System.out.println("Result of locA.equals(locB) " + locA.equals(locB));
 
-        videoDemo();
+        // videoDemo();
     }
 
     // We will look at this a bit later in the livecode, please ignore for first part
