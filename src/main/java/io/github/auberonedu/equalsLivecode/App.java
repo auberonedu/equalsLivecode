@@ -18,6 +18,13 @@ public class App {
         System.out.println("Result of locA == locB " + (locA == locB));
         System.out.println("Result of locA.equals(locB) " + locA.equals(locB));
 
+        Set<Centroid> centroids = new HashSet<>();
+        System.out.println(locA.hashCode());
+        System.out.println(locA.hashCode());
+        centroids.add(locA);
+        centroids.add(locB);
+        System.out.println(centroids.size());
+    
         // videoDemo();
     }
 
