@@ -17,7 +17,17 @@ public class App {
         System.out.println("Result of locA == locB " + (locA == locB));
         System.out.println("Result of locA.equals(locB) " + locA.equals(locB));
 
-        videoDemo();
+        Set<Centroid> centroids = new HashSet<>();
+        centroids.add(locA);
+
+        System.out.println(centroids.contains(locB));
+
+        // System.out.println(locA.hashCode());
+        // System.out.println(locB.hashCode());
+
+
+
+        // videoDemo();
     }
 
     // We will look at this a bit later in the livecode, please ignore for first part
