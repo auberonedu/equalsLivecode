@@ -11,6 +11,10 @@ public class Centroid {
         this.name = name;
     }
 
+    //we're allowed to get other instance if we're in the same class???
+    //if I'm a centroid and I have this instance of a centroid, I'm allowed
+    //to get the private variables of any other private centroid that 
+    //gets passed to me
     public int getR() {
         return r;
     }
@@ -19,7 +23,59 @@ public class Centroid {
         return c;
     }
 
+    //this override is putting into hash table based on values, not
+    //memory reference
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + r;
+        result = prime * result + c;
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Centroid other = (Centroid) obj;
+        if (r != other.r)
+            return false;
+        if (c != other.c)
+            return false;
+        if (name == null) {
+            if (other.name != null)
+                return false;
+        } else if (!name.equals(other.name))
+            return false;
+        return true;
+    }
+
     public String getName() {
         return name;
     }
+
+    // @Override
+    // public boolean equals(Object o) {
+    //     if(o == null) return false;
+    //     //if(this.getClass() != that.getClass) return false
+    //     if(getClass() != o.getClass()) return false;
+    //     //casting
+    //     Centroid other = (Centroid) o;
+    //     //primitive ints cannot be null!!
+    //     if(r != other.r) return false;
+    //     if(c != other.c) return false;
+    //     if(name == null) {
+    //         if(other.name == null) return true;
+    //         if(other.name != null) return false;
+    //     }
+    //     //if(name != other.name) return false;//don't compare strings with ==
+    //     if(!name.equals(other.name)) return false;
+    //     return true;
+    // }
 }
