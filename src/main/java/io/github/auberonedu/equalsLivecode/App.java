@@ -13,12 +13,19 @@ public class App {
 
         Centroid locA = new Centroid(4, 9, "Salamander");
         Centroid locB = new Centroid(4, 9, "Salamander");
-        Centroid locC = locA;
+       // Centroid locC = locA;
 
         System.out.println();
 
         System.out.println("Result of locA == locB " + (locA == locB));
         System.out.println("Result of locA.equals(locB) " + locA.equals(locB));
+
+        Set<Centroid> centroids = new HashSet<>();
+        System.out.println(locA.hashCode());
+        System.out.println(locB.hashCode());
+        centroids.add(locA);
+        centroids.add(locB);
+        System.out.println(centroids.size());
 
         // videoDemo();
     }
