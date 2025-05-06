@@ -14,10 +14,22 @@ public class App {
         Centroid locA = new Centroid(4, 9, "Salamander");
         Centroid locB = new Centroid(4, 9, "Salamander");
 
-        System.out.println("Result of locA == locB " + (locA == locB));
-        System.out.println("Result of locA.equals(locB) " + locA.equals(locB));
+        // System.out.println("Result of locA == locB " + (locA == locB));
+        // System.out.println("Result of locA.equals(locB) " + locA.equals(locB));
 
-        videoDemo();
+        // Set<Centroid> centroids = new HashSet<>();
+        // centroids.add(locA);
+        // System.out.println(centroids.contains(locB));
+
+        Location a = new Location(5, 1, "food");
+        Location b = new Location(5, 1, "food");
+        System.out.println(a.equals(b));
+        System.out.println(a.hashCode());
+        System.out.println(b.hashCode());
+
+
+
+        // videoDemo();
     }
 
     // We will look at this a bit later in the livecode, please ignore for first part
