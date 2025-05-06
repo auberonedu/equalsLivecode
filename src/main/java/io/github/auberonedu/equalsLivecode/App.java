@@ -1,7 +1,6 @@
 package io.github.auberonedu.equalsLivecode;
 
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -15,17 +14,22 @@ public class App {
         Centroid locB = new Centroid(4, 9, "Salamander");
         Centroid locC = locA;
 
-        System.out.println("Result of locA == locB " + (locA == locB));
-        System.out.println("Result of locA.equals(locB) " + locA.equals(locB));
+        // System.out.println("Result of locA == locB " + (locA == locB));
+        // System.out.println("Result of locA.equals(locB) " + locA.equals(locB));
 
-        Set<Centroid> centroids = new HashSet<>();
-        System.out.println(locA.hashCode());
-        System.out.println(locB.hashCode());
-        centroids.add(locA);
-        centroids.add(locB);
-        System.out.println(centroids.contains(locB));
-        System.out.println(centroids.size());
+        // Set<Centroid> centroids = new HashSet<>();
+        // System.out.println(locA.hashCode());
+        // System.out.println(locB.hashCode());
+        // centroids.add(locA);
+        // centroids.add(locB);
+        // System.out.println(centroids.contains(locB));
+        // System.out.println(centroids.size());
 
+        Location a = new Location(5, 1, "food");
+        Location b = new Location(5, 1, "food");
+        System.out.println(a.equals(b));
+        System.out.println(a.hashCode());
+        System.out.println(b.hashCode());
 
         // videoDemo();
     }
