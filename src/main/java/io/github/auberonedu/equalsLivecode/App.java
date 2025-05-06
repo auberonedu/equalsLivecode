@@ -14,13 +14,33 @@ public class App {
         Centroid locA = new Centroid(4, 9, "Salamander");
         Centroid locB = new Centroid(4, 9, "Salamander");
 
-        System.out.println("Result of locA == locB " + (locA == locB));
-        System.out.println("Result of locA.equals(locB) " + locA.equals(locB));
+        System.out.println("Result of locA == locB " + (locA == locB)); // comparing reference
+        System.out.println("Result of locA.equals(locB) " + locA.equals(locB)); // hopefully value equality (if rewritten in Centroid.java)
 
-        videoDemo();
+        Set<Centroid> centroids = new HashSet<>();
+        centroids.add(locA);
+        centroids.add(locB);
+
+        System.out.println(locA.hashCode());
+        System.out.println(locB.hashCode());
+
+        System.out.println(centroids.contains(locB));
+
+
+        System.out.println("--- Records ---");
+        Location a = new Location(5, 1, "food");
+        Location b = new Location(5, 1, "food");
+
+        System.out.println(a.equals(b));
+        System.out.println(a.hashCode());
+        System.out.println(b.hashCode());
+
+
+        //videoDemo();
     }
 
     // We will look at this a bit later in the livecode, please ignore for first part
+     
     public static void videoDemo() {
         List<char[][]> video = List.of(
             // Frame 0: Salamander is at [2, 3] (all locations in [row, column] format)
@@ -94,5 +114,5 @@ public class App {
         boolean hasOverlap = !Collections.disjoint(salamanderLocations, foodLocations);
         System.out.println("Do the salamander locations overlap with the food locations: " + hasOverlap);
     }
-
+    
 }
