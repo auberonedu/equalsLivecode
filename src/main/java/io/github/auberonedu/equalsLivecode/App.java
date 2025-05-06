@@ -13,11 +13,29 @@ public class App {
 
         Centroid locA = new Centroid(4, 9, "Salamander");
         Centroid locB = new Centroid(4, 9, "Salamander");
+        Centroid locC = locA;
+        Centroid locD = new Centroid(1, 9, "Salamander");
 
         System.out.println("Result of locA == locB " + (locA == locB));
         System.out.println("Result of locA.equals(locB) " + locA.equals(locB));
+        System.out.println("Result of locA.equals(locC) " + locA.equals(locC));
+        System.out.println("Result of locC.equals(locB) " + locC.equals(locD));
 
-        videoDemo();
+        Set<Centroid> centroids = new HashSet<>();
+        System.out.println(locA.hashCode());
+        System.out.println(locB.hashCode());
+        centroids.add(locA);
+        centroids.add(locB);
+        System.out.println(centroids.contains(locB));
+        System.out.println(centroids.size());
+
+        Location a = new Location(5, 1, "food");
+        Location b = new Location(5, 1, "food");
+        
+        System.out.println(a.equals(b));
+        System.out.println(a.hashCode());
+
+        // videoDemo();
     }
 
     // We will look at this a bit later in the livecode, please ignore for first part
